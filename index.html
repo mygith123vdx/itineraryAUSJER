@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Aussois → Jerusalem Itinerary</title>
+    <meta
+      name="description"
+      content="This page shows the updated itinerary of XXX from Aussois to Jerusalem."
+    />
+    <style>
+      :root{
+        --bg: #f4fbf4;
+        --card: rgba(255,255,255,.82);
+        --text: #12301a;
+        --muted: #2b5a3a;
+        --accent: #2f7d4a;
+        --accent2: #1f5f3a;
+        --border: rgba(18,48,26,.12);
+        --shadow: 0 12px 32px rgba(0,0,0,.10);
+      }
+      *{ box-sizing: border-box; }
+      body{
+        margin:0;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(1200px 700px at 15% 0%, rgba(47,125,74,.20), transparent 60%),
+          radial-gradient(900px 600px at 90% 10%, rgba(31,95,58,.18), transparent 55%),
+          linear-gradient(180deg, #eaf7ea 0%, var(--bg) 45%, #eef7ef 100%);
+        min-height: 100vh;
+      }
+      header{
+        padding: 48px 16px 22px;
+        text-align: center;
+      }
+      .title{
+        max-width: 980px;
+        margin: 0 auto;
+      }
+      h1{
+        margin: 0 0 10px;
+        font-size: clamp(28px, 4vw, 44px);
+        letter-spacing: .3px;
+      }
+      .subtitle{
+        margin: 0 auto;
+        max-width: 820px;
+        color: var(--muted);
+        font-size: 16px;
+        line-height: 1.5;
+      }
+      .wrap{
+        max-width: 1040px;
+        margin: 0 auto;
+        padding: 0 16px 60px;
+      }
+      .grid{
+        display: grid;
+        gap: 18px;
+        grid-template-columns: 1fr;
+      }
+      @media (min-width: 900px){
+        .grid{ grid-template-columns: 2fr 1fr; }
+      }
+      section{
+        background: var(--card);
+        border: 1px solid var(--border);
+        box-shadow: var(--shadow);
+        border-radius: 18px;
+        overflow: hidden;
+      }
+      .section-inner{
+        padding: 18px 18px 20px;
+      }
+      .section-title{
+        display:flex;
+        align-items:center;
+        gap:10px;
+        margin: 0 0 12px;
+        font-size: 18px;
+      }
+      .badge{
+        width: 10px;
+        height: 10px;
+        border-radius: 999px;
+        background: linear-gradient(180deg, var(--accent), var(--accent2));
+        box-shadow: 0 0 0 4px rgba(47,125,74,.12);
+      }
+      .map{
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        min-height: 320px;
+        border-top: 1px solid var(--border);
+        background: #eaf3ea;
+      }
+      iframe{
+        position:absolute;
+        inset:0;
+        width:100%;
+        height:100%;
+        border:0;
+      }
+      .blog-note{
+        color: var(--muted);
+        line-height: 1.6;
+      }
+      footer{
+        text-align:center;
+        padding: 24px 16px 46px;
+        color: rgba(18,48,26,.65);
+        font-size: 13px;
+      }
+      a{ color: var(--accent2); }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="title">
+        <h1>Aussois → Jerusalem</h1>
+        <p class="subtitle">
+          This page shows the updated itinerary of XXX.
+        </p>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <div class="grid">
+        <section aria-label="Itinerary">
+          <div class="section-inner">
+            <h2 class="section-title"><span class="badge"></span>Itinerary</h2>
+            <p class="blog-note" style="margin-top:0">
+              The map below is embedded from Google My Maps and should work on mobile and desktop.
+            </p>
+          </div>
+          <div class="map">
+            <iframe
+              src="https://www.google.com/maps/d/embed?mid=1zMtqVcVYhkvAkTTGJeadeqYhXBK5ojw&ehbc=2E312F"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </section>
+
+        <section aria-label="Blog">
+          <div class="section-inner">
+            <h2 class="section-title"><span class="badge"></span>Blog</h2>
+            <p class="blog-note" style="margin:0">
+              Add short updates here (dates, notes, photos, etc.). For now this is a placeholder.
+            </p>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      Nature theme · green + mountains · responsive layout
+    </footer>
+  </body>
+</html>

@@ -102,6 +102,21 @@
         height:100%;
         border:0;
       }
+      /* Scoped rule for small inline embedded maps so they behave like images
+         and do not overlap other content. This overrides the global iframe rule
+         for iframes with class="inline-map" inside .blog-entry. */
+      .blog-entry iframe.inline-map {
+        position: static;        /* keep it in the normal document flow */
+        display: block;
+        width: 240px;            /* small image-like size */
+        height: 160px;
+        max-width: 100%;         /* responsive on narrow screens */
+        border: 0;
+        margin-top: 10px;
+        border-radius: 8px;
+        box-shadow: 0 8px 20px rgba(0,0,0,.08);
+        overflow: hidden;
+      }
       .blog-note{
         color: var(--muted);
         line-height: 1.6;
@@ -185,7 +200,9 @@
               <div class="date">26 juillet 2026</div>
               <p>Départ d'Aussois après le déjeuner, depuis la croix surplombant le village au lieu-dit Le Croé. Bivouac au sud du glacier de Belle Place.</p>
              <iframe
-                width="60" height="40" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+                class="inline-map"
+                title="Carte Aussois"
+                width="240" height="160" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
                 sandbox="allow-forms allow-scripts allow-same-origin"
                 src="https://cartes.gouv.fr/explorer-les-cartes/embed?c=6.761475,45.277537&z=15&l=GEOGRAPHICALGRIDSYSTEMS.PLANIGNV2$GEOPORTAIL:OGC:WMTS(1;1;0;0),GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN25TOUR$GEOPORTAIL:OGC:WMTS(2;1;1;0),GEOGRAPHICALGRIDSYSTEMS.MAPS$GEOPORTAIL:OGC:WMTS(3;0.44;0;0)&permalinkShare=yes"
                 allowfullscreen>
